@@ -41,7 +41,7 @@ class UploadImageViewController: UIViewController {
     loadingSpinner.startAnimating()
     
     //TODO: Upload a new picture
-    let pictureData = UIImagePNGRepresentation(imageToUpload.image!)
+    let pictureData = UIImageJPEGRepresentation(imageToUpload.image!, 0.5)
     
     //1
     let file = PFFile(name: "image", data: pictureData!)
