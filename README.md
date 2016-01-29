@@ -2,13 +2,18 @@
 
 Build and run the app in the iPhone simulator. 
 
-WallPost App will allow you to add picture to your posts.
+The intended user experience:
+Users can use WallPost App to add picture to your posts. This app has the ability to show Pictures on the Wall that allows other users to view it. 
 
+First time user: 
 
-Added Feature:
+After logged-in to the App, user can tap the “Upload” button on the Wall view to take them to the upload screen shown below.
+
+The user can enter an optional comment and tap “Select Picture” to select something from the library to upload using the standard image picker.
+Users then can press the “Send” button on the Navigation Toolbar – that sends the picture and comment to the server.
 
 Parse UI login feature.
 
-the ability to attach a photo to a note. The data model doesn’t have any place to persist this kind of information, See the data model to hold onto the photo.
+Parse makes it easy to upload files. Open UploadImageViewController.swift, which is where you’ll do the work to upload files.
 
-As an application collects more and more mapping models over time, this file naming convention makes it easier to distinguish between files and the order in which they have changed over time. Xcode examines the source and target models and infers as much as it can
+Design of this upload the image using a PFFile object; second, attach it to a PFObject, and upload it to the server.
