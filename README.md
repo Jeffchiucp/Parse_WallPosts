@@ -1,13 +1,10 @@
 # Parse_WallPosts
 
-Build and run the app in the iPhone simulator. 
-
-
 This photo sharing app allows users to add pictures to their posts. It hasa users logins, photo uploads, and a photo wall. The App allows users can use WallPost App to add picture to their posts. This app has the ability to show Pictures on the Wall that allows other users to view it. 
 
 How to run the project:
 Download the folder. After downloading it, unzip it and open the XCode project. 
-
+Build and run the app in the iPhone simulator. 
 
 Instruction for the First time user: 
 
