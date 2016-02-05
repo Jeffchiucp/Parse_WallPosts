@@ -13,3 +13,7 @@ After logged-in to the App, user can tap the “Upload” button on the Wall vie
 
 The user can enter an optional comment and tap “Select Picture” to select something from the library to upload using the standard image picker. Users then can press the “Send” button on the Navigation Toolbar – that sends the picture and comment to the server.
 
+Known Issues:
+The app crashes if there is no image chosen. And the table view does not seem to download and display images that are uploaded before. The images are only seen when users first upload them, but once the app is rebuilt, the image don't seem to display.
+I will include an object graph that can be persisted in Core Data
+
