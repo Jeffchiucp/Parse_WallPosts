@@ -36,9 +36,13 @@ class WallPicturesTableViewController: PFQueryTableViewController {
     
     //6
     cell.postImage.file = wallPost.image
-    cell.postImage.loadInBackground(nil) { percent in
+    cell.postImage.loadInBackground({(image, error)-> Void in
+      print(error)
+      }) { percent in
       cell.progressView.progress = Float(percent)*0.01
       print("\(percent)%")
+      // - (void)loadInBackground:(nullable PFImageViewImageResultBlock)completion
+      // progressBlock:(nullable void (^)(int))progressBlock;
     }
     
     //7
