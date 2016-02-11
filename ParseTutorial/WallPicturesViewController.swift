@@ -33,9 +33,7 @@ class WallPicturesViewController: UIViewController {
   func cleanWall()
   {
     for viewToRemove in wallScroll.subviews {
-      if let viewToRemove = viewToRemove as? UIView {
         viewToRemove.removeFromSuperview()
-      }
     }
   }
   

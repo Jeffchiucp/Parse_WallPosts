@@ -18,4 +18,10 @@ extension UIViewController {
       presentViewController(alert, animated: true, completion: nil)
     }
   }
+
+    func showMessageView(customMessage: String) {
+      let alert = UIAlertController(title: "Error", message: customMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
+    }
 }

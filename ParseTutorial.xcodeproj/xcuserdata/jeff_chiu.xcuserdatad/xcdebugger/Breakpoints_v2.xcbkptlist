@@ -9,13 +9,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ParseTutorial/WallPicturesViewController.swift"
-            timestampString = "475618069.761018"
+            filePath = "ParseTutorial/UIViewControllerExtension.swift"
+            timestampString = "476743711.648903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "cleanWall()"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "UIViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParseTutorial/UploadImageViewController.swift"
+            timestampString = "476744023.818404"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "sendPressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ParseTutorial/WallPicturesViewController.swift"
-            timestampString = "476407140.670551"
+            filePath = "ParseTutorial/UIViewControllerExtension.swift"
+            timestampString = "476744323.938216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "cleanWall()"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "showMessageView(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -31,13 +31,18 @@ class UploadImageViewController: UIViewController {
     imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
     presentViewController(imagePicker, animated: true, completion: nil)
   }
+
+  
   
   @IBAction func sendPressed(sender: AnyObject) {
+    
+   if imageToUpload.image == nil { showMessageView("picture is nil"); return }
+    
     commentTextField.resignFirstResponder()
     
     //Disable the send button until we are ready
     // check if the image is wrapped
-    // IBAction func "Wow, you don't have the image. You cannot to move on"
+    // "Wow, you don't have the image. You cannot to move on"
     // print(a line that it does not work)
     
     navigationItem.rightBarButtonItem?.enabled = false
