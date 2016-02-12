@@ -13,10 +13,19 @@ After logged-in to the App, user can tap the “Upload” button on the Wall vie
 
 The user can enter an optional comment and tap “Select Picture” to select something from the library to upload using the standard image picker. Users then can press the “Send” button on the Navigation Toolbar – that sends the picture and comment to the server.
 
-Known Issues:
-1. The app crashes if there is no image chosen. And the table view does not seem to download and display images that are uploaded before. The images are only seen when users first upload them, but once the app is rebuilt, the image don't seem to display.
 
-2. There are some Error message that print out from the 
-There are some error with the App Transport Security policy requires the use of a secure connection.
-3. I will include an object graph that can be persisted in Core Data
+
+The project consists of four main views:
+1. Log In: A Login screen with user and password text fields. There’s a “Sign Up” button to go to the Sign Up view to create a new user.
+2. Sign Up: In this view, the user introduces the username and password to create a new account with the backend service.
+3. Wall: This is the main screen of the app. Here the user can see all of the other users uploaded images, the creation date and the comment associated with them.
+4. Upload: In this view, a user can upload their own images to the wall and (optionally) add a comment.
+Each view has its own UIViewController in the storyboard, but you’ll notice that the Wall view has two representations. That’s because you’re going to see two ways to implement this view with Parse.
+
+
+Known Issues:
+1. The app is missing Core Data.  I will include an object graph that can be persisted in Core Data
+
+
+2. There are some error with the App Transport Security policy requires the use of a secure connection.
 

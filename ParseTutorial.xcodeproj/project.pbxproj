@@ -34,6 +34,7 @@
 		0ED891F71ADAB6C6008D655B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED891F41ADAB6C6008D655B /* Parse.framework */; };
 		0ED891F81ADAB6C6008D655B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED891F51ADAB6C6008D655B /* ParseUI.framework */; };
 		0ED93C9A1AAC7CA10028B869 /* WallPicturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED93C991AAC7CA10028B869 /* WallPicturesTableViewController.swift */; };
+		7FDEE5531C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FDEE5511C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		0ED891F41ADAB6C6008D655B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		0ED891F51ADAB6C6008D655B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		0ED93C991AAC7CA10028B869 /* WallPicturesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPicturesTableViewController.swift; sourceTree = "<group>"; };
+		7FDEE5521C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParesCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		0E5977171AA9F46F00CB22B6 = {
 			isa = PBXGroup;
 			children = (
+				7FDEE5511C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld */,
 				0E5977221AA9F46F00CB22B6 /* ParseTutorial */,
 				0E277A751AAA437C001CAED1 /* Frameworks */,
 				0E5977381AA9F46F00CB22B6 /* ParseTutorialTests */,
@@ -345,6 +348,7 @@
 			files = (
 				0E59774B1AA9F4DC00CB22B6 /* RegisterViewController.swift in Sources */,
 				0E5977491AA9F4CF00CB22B6 /* LoginViewController.swift in Sources */,
+				7FDEE5531C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld in Sources */,
 				0E234A401AACA6B100FDA76B /* UIViewControllerExtension.swift in Sources */,
 				0ED93C9A1AAC7CA10028B869 /* WallPicturesTableViewController.swift in Sources */,
 				0E59774F1AA9F50F00CB22B6 /* UploadImageViewController.swift in Sources */,
@@ -575,6 +579,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7FDEE5511C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FDEE5521C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 7FDEE5521C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodel */;
+			path = ParesCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0E5977181AA9F46F00CB22B6 /* Project object */;
 }
