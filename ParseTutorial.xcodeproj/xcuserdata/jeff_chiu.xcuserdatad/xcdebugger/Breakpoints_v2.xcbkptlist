@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParseTutorial/UploadImageViewController.swift"
-            timestampString = "476744023.818404"
+            timestampString = "477008936.412522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "sendPressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
