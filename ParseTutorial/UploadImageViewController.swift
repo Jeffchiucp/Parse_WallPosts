@@ -18,11 +18,13 @@ class UploadImageViewController: UIViewController {
   var username: String?
   var pffiles = [PFFile]()
   // pffiles is an array of the pffile
+  // need to look into the managedObjectContext
   
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
   //fetchRequest for PFfile
+  //let fetchRequest = NSFetchRequest(PFFile : "pffile")
     
     let fetchRequest = NSFetchRequest(entityName : "pffile")
 //    fetchRequest =
