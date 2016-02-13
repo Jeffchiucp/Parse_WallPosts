@@ -16,9 +16,25 @@ class UploadImageViewController: UIViewController {
   @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
   
   var username: String?
+  var pffiles = [PFFile]()
+  // pffiles is an array of the pffile
   
   // MARK: - Lifecycle
   override func viewDidLoad() {
+    super.viewDidLoad()
+  //fetchRequest for PFfile
+    
+    let fetchRequest = NSFetchRequest(entityName : "pffile")
+//    fetchRequest =
+//    do {
+//      if let PFfiles {
+//      try managedObjectContext.executeFetchRequest(fetchRequest)
+//      as? [Pffile] {
+//        PFFile = PFfiles
+//      }
+//    } catch {
+//      fatalError("Error fetching data!")
+//    }
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
@@ -37,7 +53,7 @@ class UploadImageViewController: UIViewController {
   
   @IBAction func sendPressed(sender: AnyObject) {
     
-   if imageToUpload.image == nil { showMessageView("picture is nil"); return }
+   if imageToUpload.image == nil { showMessageView("Wow, you don't have the image. You cannot to move on"); return }
     
     commentTextField.resignFirstResponder()
     
