@@ -14,6 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
+  lazy var coreDataStack = CoreDataStack()
+  
+  func application(application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions:
+    [NSObject : AnyObject]?) -> Bool {
+      
+      let navigationController = window!.rootViewController
+        as! UINavigationController
+      let listViewController =
+      navigationController.topViewController
+        as! CoreStackViewController
+      listViewController.coreDataStack = coreDataStack
+      
+      return true
+  }
+  
+  func applicationWillTerminate(application: UIApplication) {
+    coreDataStack.saveContext()
+  }
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     Parse.setApplicationId("jHZOA4z3wxnwdcIjuxqrzLmxrxgkXcaVtdICtras", clientKey: "Akqu8eTpeS3l44BOQvbpAnZzweRiuEvcPSVgzyqY")
@@ -79,6 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    managedObjectContext.persistentStoreCoordinator = coordinator
     return managedObjectContext
   }()
+  
+  
   
   func saveContext () {
 //    if managedObjectContext.hasChanges {
