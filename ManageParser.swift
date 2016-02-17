@@ -1,5 +1,5 @@
 //
-//  CoreStackViewController.swift
+//  ManageParser.swift
 //  ParseTutorial
 //
 //  Created by Jeff_Chiu on 2/16/16.
@@ -7,5 +7,5 @@
 //
 
 import Foundation
-import CoreData
+
 
