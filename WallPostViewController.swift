@@ -94,7 +94,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   func actorPicker(actorPicker: WallPostViewController, didPickActor ,name: Person?) {
     
     
-    if let newActor = actor {
+//    if let newActor = actor {
       
       // Debugging output
       print("picked actor with name: \(newActor.name),  id: \(newActor.id), profilePath: \(newActor.imagePath)")
