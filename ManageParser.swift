@@ -7,5 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
+//https://parse.com/questions/updating-core-data-with-objects-from-a-parse-query
 

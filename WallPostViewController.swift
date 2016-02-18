@@ -81,7 +81,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // Mark: - Actions
   
-  func addActor() {
+  func () {
     let controller = self.storyboard!.instantiateViewControllerWithIdentifier("WallPostViewController") as! WallPostViewController
     
     //controller.delegate = self
@@ -148,7 +148,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   }
   
   // This one is also fairly easy. You can get the actor in the same way as cellForRowAtIndexPath above.
-  override func tableView(tableView: UITableView,
+  func tableView(tableView: UITableView,
     didSelectRowAtIndexPath indexPath: NSIndexPath) {
       let controller =
       storyboard!.instantiateViewControllerWithIdentifier("UploadImageViewController")

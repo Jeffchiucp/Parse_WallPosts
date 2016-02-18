@@ -38,6 +38,7 @@ class PFfile: NSManagedObject {
       data = pathForImage
     }
     
+
   }
   
 }

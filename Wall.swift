@@ -7,9 +7,18 @@
 //
 
 import Foundation
+import CoreData
 
-struct Keys {
+@objc(Wall)
+class Wall: NSManagedObject {
+  // Insert code here to add functionality to your managed object subclass
+
+
+  struct Keys {
   static let User = "user"
+  static let Image = "image"
+  
+  
 }
 
 @NSManaged var user: String
@@ -29,3 +38,4 @@ init(dictionary: [String : AnyObject], context: NSManagedObjectContext) {
 var image: UIImage? {
 get {
   return
+

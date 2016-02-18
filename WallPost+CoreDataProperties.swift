@@ -12,9 +12,10 @@
 import Foundation
 import CoreData
 
+
 extension WallPost {
-
-    @NSManaged var user: String?
-    @NSManaged var pffile: PFfile?
-
+  @NSManaged var image: PFFile
+  @NSManaged var user: PFUser
+  @NSManaged var comment: String?
+  
 }
