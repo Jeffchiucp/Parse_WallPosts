@@ -28,7 +28,7 @@ class PFfile: NSManagedObject {
     super.init(entity: entity, insertIntoManagedObjectContext: context)
   }
   
-  init(dictionary: [String : AnyObject], context: NSManagedObjectContext) {
+  init(PFfile: [String : AnyObject], context: NSManagedObjectContext) {
     let entity =  NSEntityDescription.entityForName("Photo", inManagedObjectContext: context)!
     super.init(entity: entity,insertIntoManagedObjectContext: context)
     
