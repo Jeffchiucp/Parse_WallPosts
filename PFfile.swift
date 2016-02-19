@@ -23,7 +23,9 @@ class PFfile: NSManagedObject {
   }
   
   @NSManaged var name: String
-  @NSManaged var data: String
+  var data: UIImage {
+    return ImageCache().imageWithIdentifier(name)!
+  }
   
   override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     super.init(entity: entity, insertIntoManagedObjectContext: context)
@@ -35,8 +37,8 @@ class PFfile: NSManagedObject {
     
     name = PFfile[Keys.Name] as! String
     
-    if let data = PFfile[Keys.Data] as? String {
-      data =
+    if let data = PFfile[Keys.Data] as? UIImage {
+      ImageCache().storeImage(data, withIdentifier: self.name)
     }
     
 

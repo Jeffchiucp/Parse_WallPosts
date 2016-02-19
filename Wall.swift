@@ -21,7 +21,7 @@ class Wall: NSManagedObject {
   
 }
 
-@NSManaged var users: String
+@NSManaged var user: String
 
 override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
   super.init(entity: entity, insertIntoManagedObjectContext: context)
@@ -31,10 +31,7 @@ init(Wall: [String : AnyObject], context: NSManagedObjectContext) {
   let entity =  NSEntityDescription.entityForName("user", inManagedObjectContext: context)!
   super.init(entity: entity,insertIntoManagedObjectContext: context)
   
-  user = WALL[Keys.users] as! String
+  user = Wall[Keys.User] as! String
   
 }
-
-var image: UIImage? {
-get {
-  return
+}

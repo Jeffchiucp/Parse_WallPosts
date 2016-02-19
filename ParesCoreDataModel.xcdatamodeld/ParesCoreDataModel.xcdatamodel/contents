@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
     <entity name="PFfile" representedClassName="PFfile" syncable="YES">
-        <attribute name="data" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="imagefiletoWall" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WallPost" inverseName="pffile" inverseEntity="WallPost" syncable="YES"/>
+        <relationship name="imagefiletoWall" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wall" inverseName="pffile" inverseEntity="Wall" syncable="YES"/>
     </entity>
-    <entity name="WallPost" representedClassName="WallPost" syncable="YES">
-        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Wall" representedClassName="WallPost" syncable="YES">
         <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="pffile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PFfile" inverseName="imagefiletoWall" inverseEntity="PFfile" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PFfile" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="WallPost" positionX="169" positionY="-81" width="128" height="105"/>
+        <element name="PFfile" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Wall" positionX="169" positionY="-81" width="128" height="75"/>
     </elements>
 </model>

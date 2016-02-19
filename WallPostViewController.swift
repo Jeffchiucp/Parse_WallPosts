@@ -139,12 +139,12 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
       let pffiles = fetchedResultsController.objectAtIndexPath(indexPath) as! PFFile
       
       let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as!
-      WallPostViewController
+      PFTableViewCell
       
       // This is the new configureCell method
       configureCell(cell, PFFile: PFfile)
       
-      return cell
+      return
   }
   
   // This one is also fairly easy. You can get the actor in the same way as cellForRowAtIndexPath above.
@@ -249,14 +249,14 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   // Refactoring it into its own method allow the logic to be reused in the fetch results
   // delegate methods
   
-  func configureCell(cell: ImageCache, PFFile : PFfile) {
-    cell.nameLabel!.text = PFfile.name
+  func configureCell(cell: PFTableViewCell, PFFile : PFfile) {
+    cell.nameLabel!.text = PFTableViewCell.name
     cell.frameImageView.image = UIImage(named: "personFrame")
     cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     
     if let localImage = PFfile.image {
-      cell.actorImageView.image = localImage
-    } else if actor.imagePath == nil || PFfile.imagePath == "" {
+      cell.PFImageView.image = localImage
+    } else if UIImage.imagePath == nil || PFfile.imagePath == "" {
       cell.actorImageView.image = UIImage(named: "personNoImage")
     }
       
