@@ -24,7 +24,7 @@ import CoreData
 *
 */
 
-private let SQLITE_FILE_NAME = "WallParse.sqlite"
+private let SQLITE_FILE_NAME = "WallPost.sqlite"
 
 class CoreDataStackManager {
   
@@ -81,7 +81,7 @@ class CoreDataStackManager {
     print("Instantiating the persistentStoreCoordinator property")
     
     let coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-    let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("WallPost.sqlite")
+    let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent('SQLITE_FILE_NAME')
     
     print("parse path: \(url.path!)")
     

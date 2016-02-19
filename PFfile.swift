@@ -14,6 +14,7 @@ import CoreData
 @objc(PFfile)
 class PFfile: NSManagedObject {
   
+  //PFfile is my dictionary for storing all of the data.
 // Insert code here to add functionality to your managed object subclass
   
   struct Keys {
@@ -32,10 +33,10 @@ class PFfile: NSManagedObject {
     let entity =  NSEntityDescription.entityForName("Photo", inManagedObjectContext: context)!
     super.init(entity: entity,insertIntoManagedObjectContext: context)
     
-    name = dictionary[Keys.Name] as! String
+    name = PFfile[Keys.Name] as! String
     
-    if let data = dictionary[Keys.Data] as? String {
-      data = pathForImage
+    if let data = PFfile[Keys.Data] as? String {
+      data =
     }
     
 

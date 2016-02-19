@@ -76,7 +76,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   }()
   
   
-  // Step 5: Remove the fetchAllActors() method, and the invocation
+  // Step 5: Remove the fetchAllWallPicture() method, and the invocation
   // REMOVED
   
   // Mark: - Actions
@@ -91,22 +91,22 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // MARK: - Actor Picker Delegate
   
-  func actorPicker(actorPicker: WallPostViewController, didPickActor ,name: Person?) {
+   func WallPicker(WallPost: WallPostViewController, WallPost ,name: WallPost?) {
     
     
-//    if let newActor = actor {
+    if let Wall = WallPost {
       
       // Debugging output
-      print("picked actor with name: \(newActor.name),  id: \(newActor.id), profilePath: \(newActor.imagePath)")
+     // print("picked actor with name: \(newActor.name),  id: \(newActor.id), profilePath: \(newActor.imagePath)")
       
-      let dictionary: [String : AnyObject] = [
+      let Wall: [String : AnyObject] = [
 
       ]
       
-      // Now we create a new Person, using the shared Context
-      let _ = Person(dictionary: dictionary, context: sharedContext)
+      // Now we create a new WallPost, using the shared Context
+      let _ = Wall(dictionary: dictionary, context: sharedContext)
       
-      // Step 3: Do not add actors to the actors array.
+      // Step 3: Do not add WallPosts to the Wall array.
       // This is no longer necessary once we are modifying our table through the
       // fetched results controller delefate methods
       // REMOVED
@@ -142,7 +142,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
       WallPostViewController
       
       // This is the new configureCell method
-      configureCell(cell, withActor: PFfile)
+      configureCell(cell, PFFile: PFfile)
       
       return cell
   }
@@ -229,8 +229,8 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
         
       case .Update:
         let cell = tableView.cellForRowAtIndexPath(indexPath!) as! ActorTableViewCell
-        let actor = controller.objectAtIndexPath(indexPath!) as! Person
-        self.configureCell(cell, withActor: actor)
+        let Wall = controller.objectAtIndexPath(indexPath!) as! PFfile
+        self.configureCell(cell, : )
         
       case .Move:
         tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
@@ -249,14 +249,14 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   // Refactoring it into its own method allow the logic to be reused in the fetch results
   // delegate methods
   
-  func configureCell(cell: ActorTableViewCell, withActor actor: Person) {
-    cell.nameLabel!.text = actor.name
+  func configureCell(cell: ImageCache, PFFile : PFfile) {
+    cell.nameLabel!.text = PFfile.name
     cell.frameImageView.image = UIImage(named: "personFrame")
     cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     
-    if let localImage = actor.image {
+    if let localImage = PFfile.image {
       cell.actorImageView.image = localImage
-    } else if actor.imagePath == nil || actor.imagePath == "" {
+    } else if actor.imagePath == nil || PFfile.imagePath == "" {
       cell.actorImageView.image = UIImage(named: "personNoImage")
     }
       
