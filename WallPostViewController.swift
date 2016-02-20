@@ -20,6 +20,9 @@ import CoreData
  * Challenge 1: Convert Wall Posts to Fetched Results View Controller.
  */
  
+//var username: String?
+//var pffiles = [PFFile]()
+
  // Step 8: Add NSFetchedResultsControllerDelegate to class declaration
 class WallPostViewController : UITableViewController, NSFetchedResultsControllerDelegate{
   
@@ -27,11 +30,12 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // MARK: - Life Cycle
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.navigationItem.leftBarButtonItem = self.editButtonItem()
-//    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addActor")
+   // self.navigationItem.leftBarButtonItem = self.editButtonItem()
+   // self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addActor")
     
     // This will be removed in step 4
     // REMOVED
@@ -53,14 +57,16 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // MARK: - Core Data Convenience. This will be useful for fetching. And for adding and saving objects as well.
   
+  
   var sharedContext: NSManagedObjectContext {
     return CoreDataStackManager.sharedInstance().managedObjectContext
   }
+
   
   // Step 1 - Add the lazy fetchedResultsController property. See the reference sheet in the lesson if you
   // want additional help creating this property.
   
-  lazy var fetchedResultsController: NSFetchedResultsController = {
+  lazy var fejtchedResultsController: NSFetchedResultsController = {
     
     let fetchRequest = NSFetchRequest(entityName: "PFfile")
     
@@ -136,7 +142,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
       let CellIdentifier = "PFfile"
       
       // Here is how to replace the actors array using objectAtIndexPath
-      let pffiles = fetchedResultsController.objectAtIndexPath(indexPath) as! PFFile
+      //let pffiles = fetchedResultsController.objectAtIndexPath(indexPath) as! PFFile
       
       let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as!
       PFTableViewCell
@@ -155,9 +161,9 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
         as! UploadImageViewController
       
       // Similar to the method above
-      let actor = fetchedResultsController.objectAtIndexPath(indexPath) as! Person
+      // let actor = fetchedResultsController.objectAtIndexPath(indexPath) as! Person
       
-      controller.actor = actor
+      // controller.actor = actor
       
       self.navigationController!.pushViewController(controller, animated: true)
   }
@@ -178,8 +184,8 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
       case .Delete:
         
         // Here we get the actor, then delete it from core data
-        let actor = fetchedResultsController.objectAtIndexPath(indexPath) as! Person
-        sharedContext.deleteObject(actor)
+        //let actor = fetchedResultsController.objectAtIndexPath(indexPath) as! Person
+        //sharedContext.deleteObject(actor)
         CoreDataStackManager.sharedInstance().saveContext()
         
       default:
@@ -221,16 +227,11 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
     newIndexPath: NSIndexPath?) {
       
       switch type {
-      case .Insert:
-        tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-        
-      case .Delete:
-        tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         
       case .Update:
-        let cell = tableView.cellForRowAtIndexPath(indexPath!) as! ActorTableViewCell
-        let Wall = controller.objectAtIndexPath(indexPath!) as! PFfile
-        self.configureCell(cell, : )
+        let cell = tableView.cellForRowAtIndexPath(indexPath!) as! PFTableViewCell
+        let Wall = controller.objectAtIndexPath(indexPath!) as! PFTableViewCell
+        self.configureCell(cell, PFFile:PFfile)
         
       case .Move:
         tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
@@ -251,52 +252,52 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   func configureCell(cell: PFTableViewCell, PFFile : PFfile) {
     cell.nameLabel!.text = PFTableViewCell.name
-    cell.frameImageView.image = UIImage(named: "personFrame")
+    cell.frameImageView.image = UIImage(named: )
     cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     
-    if let localImage = PFfile.image {
-      cell.PFImageView.image = localImage
-    } else if UIImage.imagePath == nil || PFfile.imagePath == "" {
-      cell.actorImageView.image = UIImage(named: "personNoImage")
-    }
+//    if let localImage = PFfile {
+//      cell.PFImageView.image = localImage
+//    } else if UIImage.imagePath == nil || PFfile.imagePath == "" {
+//      cell.actorImageView.image = UIImage(named: "personNoImage")
+//    }
       
       // If the above cases don't work, then we should download the image
       
-    else {
+//    else {
       
       // Set the placeholder
-      cell.actorImageView.image = UIImage(named: "personPlaceholder")
+ //     cell.actorImageView.image = UIImage(named: "personPlaceholder")
       
       
-      let size = TheMovieDB.sharedInstance().config.profileSizes[1]
-      let task = TheMovieDB.sharedInstance().taskForImageWithSize(size, filePath: actor.imagePath!) { (imageData, error) -> Void in
+//      let size = TheMovieDB.sharedInstance().config.profileSizes[1]
+//      let task = TheMovieDB.sharedInstance().taskForImageWithSize(size, filePath: actor.imagePath!) { (imageData, error) -> Void in
         
-        if let data = imageData {
-          dispatch_async(dispatch_get_main_queue()) {
-            let image = UIImage(data: data)
-            actor.image = image
-            cell.actorImageView.image = image
-          }
-        }
-      }
+//        if let data = imageData {
+//          dispatch_async(dispatch_get_main_queue()) {
+//            let image = UIImage(data: data)
+//            actor.image = image
+//            cell.actorImageView.image = image
+//          }
+//        }
+//      }
       
-      cell.taskToCancelifCellIsReused = task
-    }
-  }
+//      cell.taskToCancelifCellIsReused = task
+//    }
+//  }
   
   
   // MARK: - Saving the array
   
-  var actorArrayURL: NSURL {
-    let filename = "favoriteActorsArray"
-    let documentsDirectoryURL: NSURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+//  var actorArrayURL: NSURL {
+//    let filename = "favoriteActorsArray"
+//    let documentsDirectoryURL: NSURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     
-    return documentsDirectoryURL.URLByAppendingPathComponent(filename)
-  }
+//    return documentsDirectoryURL.URLByAppendingPathComponent(filename)
+//  }
+//}
+
+
 }
-
-
-
 
 
 

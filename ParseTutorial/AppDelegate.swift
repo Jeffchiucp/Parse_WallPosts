@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
-  lazy var coreDataStack = CoreDataStackManager()
+  var coreDataStack = CoreDataStackManager()
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     Parse.setApplicationId("jHZOA4z3wxnwdcIjuxqrzLmxrxgkXcaVtdICtras", clientKey: "Akqu8eTpeS3l44BOQvbpAnZzweRiuEvcPSVgzyqY")
