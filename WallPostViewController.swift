@@ -88,38 +88,38 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   // Mark: - Actions
   
   func () {
-    let controller = self.storyboard!.instantiateViewControllerWithIdentifier("WallPostViewController") as! WallPostViewController
+    let controller = self.storyboard!.instantiateViewControllerWithIdentifier("WallPostViewController.swift") as! WallPostViewController
     
     //controller.delegate = self
     
     self.presentViewController(controller, animated: true, completion: nil)
   }
   
-  // MARK: - Actor Picker Delegate
+  // MARK: - Wall Picker Delegate
   
-   func WallPicker(WallPost: WallPostViewController, WallPost ,name: WallPost?) {
+  // func WallPicker(WallPost: WallPostViewController, WallPost ,name: WallPost?) {
     
     
-    if let Wall = WallPost {
+    //if let Wall = WallPost {
       
       // Debugging output
      // print("picked actor with name: \(newActor.name),  id: \(newActor.id), profilePath: \(newActor.imagePath)")
       
-      let Wall: [String : AnyObject] = [
+      //let Wall: [String : AnyObject] = [
 
-      ]
+      //]
       
       // Now we create a new WallPost, using the shared Context
-      let _ = Wall(dictionary: dictionary, context: sharedContext)
+      //let _ = Wall(dictionary: dictionary, context: sharedContext)
       
       // Step 3: Do not add WallPosts to the Wall array.
       // This is no longer necessary once we are modifying our table through the
       // fetched results controller delefate methods
       // REMOVED
       
-      CoreDataStackManager.sharedInstance().saveContext()
-    }
-  }
+      //CoreDataStackManager.sharedInstance().saveContext()
+    //}
+  //}
   
   // MARK: - Table View
   
@@ -127,10 +127,11 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // This one is particularly tricky. You will need to get the "section" object for section 0, then
   // get the number of objects in this section. See the reference sheet for an example.
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let sectionInfo = self.fetchedResultsController.sections![section]
-    return sectionInfo.numberOfObjects
-  }
+  
+  //override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  //  let sectionInfo = self.fetchedResultsController.sections![section]
+  //  return sectionInfo.numberOfObjects
+  //}
   
   
   // This one is easy. Get the actor using the following statement:
@@ -299,30 +300,4 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
