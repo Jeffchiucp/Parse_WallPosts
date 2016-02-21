@@ -155,7 +155,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
       return cell
   }
   
-  // This one is also fairly easy. You can get the actor in the same way as cellForRowAtIndexPath above.
+  // This one is also fairly easy. You can get the WallPost files in the same way as cellForRowAtIndexPath above.
   override func tableView(tableView: UITableView,
     didSelectRowAtIndexPath indexPath: NSIndexPath) {
       let controller =
