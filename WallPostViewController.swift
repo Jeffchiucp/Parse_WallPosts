@@ -122,20 +122,20 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // MARK: - Table View
   
-  // Step 6: Replace the actors array in the table view methods. See the comments below
+  // Step 6: Replace the PFfile array in the table view methods. See the comments below
   
   // This one is particularly tricky. You will need to get the "section" object for section 0, then
   // get the number of objects in this section. See the reference sheet for an example.
   
-  //override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  //  let sectionInfo = self.fetchedResultsController.sections![section]
-  //  return sectionInfo.numberOfObjects
-  //}
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    let sectionInfo = self.fetchedResultsController.sections![section]
+    return sectionInfo.numberOfObjects
+  }
   
   
   // This one is easy. Get the actor using the following statement:
   //
-  //        fetchedResultsController.objectAtIndexPath(:) as Person
+          fetchedResultsController.objectAtIndexPath(:) as PFfile
   //
   override func tableView(tableView: UITableView,
     cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -185,8 +185,8 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
       case .Delete:
         
         // Here we get the actor, then delete it from core data
-        //let actor = fetchedResultsController.objectAtIndexPath(indexPath) as! Person
-        //sharedContext.deleteObject(actor)
+        let file = fetchedResultsController.objectAtIndexPath(indexPath) as! PFfile
+        sharedContext.deleteObject(file)
         CoreDataStackManager.sharedInstance().saveContext()
         
       default:
