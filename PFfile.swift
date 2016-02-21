@@ -23,6 +23,8 @@ class PFfile: NSManagedObject {
   }
   
   @NSManaged var name: String
+  @NSManaged var imagefiletoWall: Wall
+
   var data: UIImage {
     return ImageCache().imageWithIdentifier(name)!
   }

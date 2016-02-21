@@ -22,6 +22,8 @@ class Wall: NSManagedObject {
 }
 
 @NSManaged var user: String
+@NSManaged var comments: String
+  
 
 override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
   super.init(entity: entity, insertIntoManagedObjectContext: context)

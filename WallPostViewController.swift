@@ -66,7 +66,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   // Step 1 - Add the lazy fetchedResultsController property. See the reference sheet in the lesson if you
   // want additional help creating this property.
   
-  lazy var fejtchedResultsController: NSFetchedResultsController = {
+  lazy var fetchedResultsController: NSFetchedResultsController = {
     
     let fetchRequest = NSFetchRequest(entityName: "PFfile")
     
@@ -87,13 +87,13 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // Mark: - Actions
   
-  func () {
-    let controller = self.storyboard!.instantiateViewControllerWithIdentifier("WallPostViewController.swift") as! WallPostViewController
+  //func () {
+  //  let controller = self.storyboard!.instantiateViewControllerWithIdentifier("WallPostViewController.swift") as! WallPostViewController
     
     //controller.delegate = self
     
-    self.presentViewController(controller, animated: true, completion: nil)
-  }
+  //  self.presentViewController(controller, animated: true, completion: nil)
+  //}
   
   // MARK: - Wall Picker Delegate
   
@@ -142,29 +142,30 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
     cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
       let CellIdentifier = "PFfile"
       
-      // Here is how to replace the actors array using objectAtIndexPath
-      //let pffiles = fetchedResultsController.objectAtIndexPath(indexPath) as! PFFile
-      
+      // Here is how to replace the Pffile array using objectAtIndexPath
+
       let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as!
-      PFTableViewCell
+      WallPostTableViewCell
       
+      let file = fetchedResultsController.objectAtIndexPath(indexPath) as! PFfile
+      
+      configureCell(cell, PFFile: file )
       // This is the new configureCell method
-      configureCell(cell, PFFile: PFfile)
       
-      return
+      return cell
   }
   
   // This one is also fairly easy. You can get the actor in the same way as cellForRowAtIndexPath above.
-  func tableView(tableView: UITableView,
+  override func tableView(tableView: UITableView,
     didSelectRowAtIndexPath indexPath: NSIndexPath) {
       let controller =
-      storyboard!.instantiateViewControllerWithIdentifier("UploadImageViewController")
+      storyboard!.instantiateViewControllerWithIdentifier("")
         as! UploadImageViewController
       
       // Similar to the method above
-      // let actor = fetchedResultsController.objectAtIndexPath(indexPath) as! Person
+       let file = fetchedResultsController.objectAtIndexPath(indexPath) as! PFfile
       
-      // controller.actor = actor
+       controller.file = file
       
       self.navigationController!.pushViewController(controller, animated: true)
   }
@@ -251,10 +252,23 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   // Refactoring it into its own method allow the logic to be reused in the fetch results
   // delegate methods
   
-  func configureCell(cell: PFTableViewCell, PFFile : PFfile) {
-    cell.nameLabel!.text = PFTableViewCell.name
-    cell.frameImageView.image = UIImage(named: )
-    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+  func configureCell(cell: WallPostTableViewCell, PFFile : PFfile) {
+    cell.postImage.image = PFFile.data
+    cell.createdByLabel!.text = PFFile.imagefiletoWall.user
+    cell.commentLabel!.text = PFFile.imagefiletoWall.comments
+    
+    
+//    @IBOutlet weak var postImage: PFImageView!
+//    @IBOutlet weak var createdByLabel: UILabel!
+//    @IBOutlet weak var commentLabel: UILabel!
+//    @IBOutlet weak var progressView: UIProgressView!
+//  }
+
+    
+    
+//    cell.nameLabel!.text = PFTableViewCell.name
+//    cell.frameImageView.image = UIImage(named: )
+//    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     
 //    if let localImage = PFfile {
 //      cell.PFImageView.image = localImage
