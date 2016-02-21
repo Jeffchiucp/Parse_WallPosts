@@ -57,7 +57,6 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // MARK: - Core Data Convenience. This will be useful for fetching. And for adding and saving objects as well.
   
-  
   var sharedContext: NSManagedObjectContext {
     return CoreDataStackManager.sharedInstance().managedObjectContext
   }
@@ -222,18 +221,18 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   // parameter gets unwrapped and put into an array literal: [newIndexPath!]
   //
   
-  func controller(controller: NSFetchedResultsController,
-    didChangeObject anObject: NSManagedObject,
-    atIndexPath indexPath: NSIndexPath?,
-    forChangeType type: NSFetchedResultsChangeType,
-    newIndexPath: NSIndexPath?) {
-      
+    
+    // let cell = tableView.cellForRowAtIndexPath(indexPath!) as! PFTableViewCell let cell = tableView.cellForRowAtIndexPath(indexPath!) as! WallPostTableViewCell let file = controller.objectAtIndexPath(indexPath!) as! PFfile self.configureCell(cell, PFFile:file) case .Move: tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade) tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade) } }
+
+    
+  func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    
       switch type {
         
       case .Update:
-        let cell = tableView.cellForRowAtIndexPath(indexPath!) as! PFTableViewCell
-        let Wall = controller.objectAtIndexPath(indexPath!) as! PFTableViewCell
-        self.configureCell(cell, PFFile:PFfile)
+        let cell = tableView.cellForRowAtIndexPath(indexPath!) as! WallPostTableViewCell
+        let file = controller.objectAtIndexPath(indexPath!) as! PFfile
+        self.configureCell(cell, PFFile:file)
         
       case .Move:
         tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
