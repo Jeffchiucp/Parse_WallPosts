@@ -17,7 +17,8 @@ class UploadImageViewController: UIViewController {
   
   var username: String?
   var file: PFFile?
-  // file is an object
+  
+  // Update the var file is an object
   // need to look into the managedObjectContext
   
   // MARK: - Lifecycle
