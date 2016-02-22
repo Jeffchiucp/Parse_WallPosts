@@ -2,79 +2,61 @@
 //  ManagedWallPost.swift
 //  ParseTutorial
 //
-//  Created by Jeff_Chiu on 2/21/16.
+//  Created by Jeff_Chiu on 2/22/16.
 //  Copyright © 2016 Ron Kliffer. All rights reserved.
-
-
-
-//
-//  ActorPickerViewController.swift
-//  FavoriteActors
-//
-//  Created by Jason on 1/31/15.
-//  Copyright (c) 2015 Udacity. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import CoreData
+@objc(ManagedWallPost)
 
 
-class ManagedWallPost: WallPostViewController,UITableViewController, NSFetchedResultsControllerDelegate{
+class ManagedWallPost: NSManagedObject {
+
+  struct Keys {
+    static let Name = "name"
+//    static let Data = "data"
+    static let User = "user"
+    static let Image = "image"
+    static let Comment = "comments"
+  }
+// Insert code here to add functionality to your managed object subclass
 
   
-  var username: String?
-  var file: PFFile?
-  var temporaryContext: NSManagedObjectContext!
+  @NSManaged var name: String?
+  @NSManaged var user: String?
+  @NSManaged var comment: String?
+  @NSManaged var imagefiletoWall: String?
   
-  //var delegate: ActorPickerViewControllerDelegate?
-  //var searchTask: NSURLSessionDataTask?
-  
-  // MARK: - life Cycle
-  override func viewDidLoad() {
-//    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancel")
+  init(dictionary: [String : AnyObject], context: NSManagedObjectContext) {
     
-    let sharedContext = CoreDataStackManager.sharedInstance().managedObjectContext
+    // Core Data
+    let entity =  NSEntityDescription.entityForName("ManageWallPost", inManagedObjectContext: context)!
+    super.init(entity: entity, insertIntoManagedObjectContext: context)
     
-    // Set the temporary context
-    temporaryContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
-    temporaryContext.persistentStoreCoordinator = sharedContext.persistentStoreCoordinator
+    // Dictionary
+    name = PFfile[Keys.Name] as! String
+    
+//    if let dateString = dictionary[Keys.ReleaseDate] as? String {
+//      if let date = TheMovieDB.sharedDateFormatter.dateFromString(dateString) {
+//        releaseDate = date
+      }
+    }
+  }
+  var data: UIImage {
+    return ImageCache().imageWithIdentifier(name)!
   }
   
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
-    
-//    self.searchBar.becomeFirstResponder()
-    
-    
-      
-      // MARK: - Shared Instance
-      
-      /**
-      *  This class variable provides an easy way to get access
-      *  to a shared instance of the CoreDataStackManager class.
-      */
-      func sharedInstance() -> CoreDataStackManager {
-        struct Static {
-          static let instance = CoreDataStackManager()
-        }
-        
-        return Static.instance
-      }
-    
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-   //   return
+  var Image: UIImage? {
+    get {
+      return
+//      ImageCache().storeImage(data, withIdentifier: self.name)
+// imageCache.imageWithIdentifier(data)
     }
     
-   // func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-   //   let actor = actors[indexPath.row]
-      
-      // Alert the delegate
-   //   delegate?.actorPicker(self, didPickActor: actor)
-      
-  //  self.dismissViewControllerAnimated(true, completion: nil)
+    set {
+//      TheMovieDB.Caches.imageCache.storeImage(newValue, withIdentifier: posterPath!)
     }
-
+  }
 }
 
-}
