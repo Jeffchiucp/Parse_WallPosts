@@ -15,10 +15,11 @@ class ManagedWallPost: NSManagedObject {
 
   struct Keys {
     static let Name = "name"
-//    static let Data = "data"
     static let User = "user"
     static let Image = "image"
     static let Comment = "comments"
+    //    static let Data = "data"
+
   }
 // Insert code here to add functionality to your managed object subclass
 
@@ -35,16 +36,11 @@ class ManagedWallPost: NSManagedObject {
     super.init(entity: entity, insertIntoManagedObjectContext: context)
     
     // Dictionary
-    name = PFfile[Keys.Name] as! String
-    
-//    if let dateString = dictionary[Keys.ReleaseDate] as? String {
-//      if let date = TheMovieDB.sharedDateFormatter.dateFromString(dateString) {
-//        releaseDate = date
+
       }
     }
-  }
   var data: UIImage {
-    return ImageCache().imageWithIdentifier(name)!
+    return ImageCache().imageWithIdentifier()!
   }
   
   var Image: UIImage? {
