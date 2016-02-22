@@ -46,7 +46,7 @@ class WallPicturesViewController: UIViewController {
         //2
         if let objects = objects as? [WallPost] {
           self.loadWallViews(objects)
-          let managedWallPost = ManagedWallPost(object, context: context)
+          let managedWallPost = ManagedWallPost(objects, context:sharedContext)
         }
       } else if let error = error {
         //3

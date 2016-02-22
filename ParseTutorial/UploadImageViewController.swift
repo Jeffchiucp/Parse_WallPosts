@@ -16,8 +16,8 @@ class UploadImageViewController: UIViewController {
   @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
   
   var username: String?
-  var pffiles = [PFFile]()
-  // pffiles is an array of the pffile
+  var file: PFFile?
+  // file is an object
   // need to look into the managedObjectContext
   
   // MARK: - Lifecycle

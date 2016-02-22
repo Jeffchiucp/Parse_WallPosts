@@ -39,6 +39,7 @@
 		7FBA98A61C73D9A300240DA8 /* WallPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA98A51C73D9A300240DA8 /* WallPostViewController.swift */; };
 		7FBA98B01C7402E800240DA8 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA98AF1C7402E800240DA8 /* Wall.swift */; };
 		7FBA98B21C769ABF00240DA8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA98B11C769ABF00240DA8 /* ImageCache.swift */; };
+		7FBA98B41C7AE8D400240DA8 /* ManagedWallPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA98B31C7AE8D400240DA8 /* ManagedWallPost.swift */; };
 		7FDEE5531C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FDEE5511C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		7FBA98A51C73D9A300240DA8 /* WallPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostViewController.swift; sourceTree = "<group>"; };
 		7FBA98AF1C7402E800240DA8 /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
 		7FBA98B11C769ABF00240DA8 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		7FBA98B31C7AE8D400240DA8 /* ManagedWallPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedWallPost.swift; sourceTree = "<group>"; };
 		7FDEE5521C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParesCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 				7FDEE5511C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld */,
 				7FBA98A51C73D9A300240DA8 /* WallPostViewController.swift */,
 				7FBA989E1C73BD1000240DA8 /* PFfile.swift */,
+				7FBA98B31C7AE8D400240DA8 /* ManagedWallPost.swift */,
 				0E5977221AA9F46F00CB22B6 /* ParseTutorial */,
 				0E277A751AAA437C001CAED1 /* Frameworks */,
 				0E5977381AA9F46F00CB22B6 /* ParseTutorialTests */,
@@ -364,6 +367,7 @@
 				0E59774B1AA9F4DC00CB22B6 /* RegisterViewController.swift in Sources */,
 				7FBA98B01C7402E800240DA8 /* Wall.swift in Sources */,
 				7FBA98B21C769ABF00240DA8 /* ImageCache.swift in Sources */,
+				7FBA98B41C7AE8D400240DA8 /* ManagedWallPost.swift in Sources */,
 				0E5977491AA9F4CF00CB22B6 /* LoginViewController.swift in Sources */,
 				7FDEE5531C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld in Sources */,
 				0E234A401AACA6B100FDA76B /* UIViewControllerExtension.swift in Sources */,

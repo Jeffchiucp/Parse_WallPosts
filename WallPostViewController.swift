@@ -19,17 +19,14 @@ import CoreData
 /**
  * Challenge 1: Convert Wall Posts to Fetched Results View Controller.
  */
- 
-//var username: String?
-//var pffiles = [PFFile]()
 
- // Step 8: Add NSFetchedResultsControllerDelegate to class declaration
+var sharedContext: NSManagedObjectContext {
+  return CoreDataStackManager.sharedInstance().managedObjectContext
+}
+
+
 class WallPostViewController : UITableViewController, NSFetchedResultsControllerDelegate{
-  
-  // Step 3: Remove the actors array
-  
-  // MARK: - Life Cycle
-  
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -57,10 +54,6 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // MARK: - Core Data Convenience. This will be useful for fetching. And for adding and saving objects as well.
   
-  var sharedContext: NSManagedObjectContext {
-    return CoreDataStackManager.sharedInstance().managedObjectContext
-  }
-
   
   // Step 1 - Add the lazy fetchedResultsController property. See the reference sheet in the lesson if you
   // want additional help creating this property.
@@ -135,7 +128,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   // This one is easy. Get the actor using the following statement:
   //
-          fetchedResultsController.objectAtIndexPath(:) as PFfile
+  //      fetchedResultsController.objectAtIndexPath(:) as PFfile
   //
   override func tableView(tableView: UITableView,
     cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -210,7 +203,11 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
         
       case .Delete:
         self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-        
+//issues with this cases?
+//      case .Move:
+//        self.tableView.moveSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+//      case .Update:
+//        self.tableView.updateSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
       default:
         return
       }
