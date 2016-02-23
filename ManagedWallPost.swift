@@ -27,32 +27,43 @@ class ManagedWallPost: NSManagedObject {
   @NSManaged var name: String?
   @NSManaged var user: String?
   @NSManaged var comment: String?
-  @NSManaged var imagefiletoWall: String?
+  
+//  let imageCache = (UIApplication.sharedApplication().delegate as! AppDelegate).imageCache
+  // 0 unread message below
   
   init(dictionary: [String : AnyObject], context: NSManagedObjectContext) {
     
     // Core Data
-    let entity =  NSEntityDescription.entityForName("ManageWallPost", inManagedObjectContext: context)!
+    let entity =  NSEntityDescription.entityForName("ManagedWallPost", inManagedObjectContext: context)!
     super.init(entity: entity, insertIntoManagedObjectContext: context)
     
-    // Dictionary
-
-      }
-    }
-  var data: UIImage {
-    return ImageCache().imageWithIdentifier()!
-  }
-  
-  var Image: UIImage? {
-    get {
-      return
-//      ImageCache().storeImage(data, withIdentifier: self.name)
-// imageCache.imageWithIdentifier(data)
-    }
     
-    set {
-//      TheMovieDB.Caches.imageCache.storeImage(newValue, withIdentifier: posterPath!)
     }
-  }
+  
+    init(wallPost: WallPost, context: NSManagedObjectContext) {
+
+      // Core Data
+      let entity =  NSEntityDescription.entityForName("ManagedWallPost", inManagedObjectContext: context)!
+      super.init(entity: entity, insertIntoManagedObjectContext: context)
+      name = wallPost.user.username!
+      comment = wallPost.comment
+      //for image
+      
+    }
+
+//  var data: UIImage {
+//    return imageCache.imageWithIdentifier()!
+//  }
+  
+//  var Image: UIImage? {
+//    get {
+//      return imageCache.storeImage(data, withIdentifier: name)
+// imageCache.imageWithIdentifier(data)
+//    }
+//
+//    set {
+//      return imageCache.storeImage(data, withIdentifier: name)
+//    }
+//  }
 }
 

@@ -88,6 +88,7 @@
 		0ED93C991AAC7CA10028B869 /* WallPicturesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPicturesTableViewController.swift; sourceTree = "<group>"; };
 		7F6AED9C1C7B92FA008F7657 /* ParesCoreDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ParesCoreDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		7F6AEDA21C7B9374008F7657 /* ManagedWallPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedWallPost.swift; sourceTree = "<group>"; };
+		7F6AEDA51C7CD85D008F7657 /* ParesCoreDataModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ParesCoreDataModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		7FBA989E1C73BD1000240DA8 /* PFfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFfile.swift; sourceTree = "<group>"; };
 		7FBA98A11C73D8DB00240DA8 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		7FBA98A51C73D9A300240DA8 /* WallPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostViewController.swift; sourceTree = "<group>"; };
@@ -609,6 +610,7 @@
 		7FDEE5511C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				7F6AEDA51C7CD85D008F7657 /* ParesCoreDataModel 3.xcdatamodel */,
 				7F6AED9C1C7B92FA008F7657 /* ParesCoreDataModel 2.xcdatamodel */,
 				7FDEE5521C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodel */,
 			);

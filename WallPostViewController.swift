@@ -60,14 +60,11 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   
   lazy var fetchedResultsController: NSFetchedResultsController = {
     
-    let fetchRequest = NSFetchRequest(entityName: "PFfile")
+    let fetchRequest = NSFetchRequest(entityName: "ManagedWallPost")
     
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
     
-    let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-      managedObjectContext: self.sharedContext,
-      sectionNameKeyPath: nil,
-      cacheName: nil)
+    let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStackManager.sharedInstance().managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
     
     return fetchedResultsController
     
@@ -139,7 +136,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
       let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as!
       WallPostTableViewCell
       
-      let file = fetchedResultsController.objectAtIndexPath(indexPath) as! PFfile
+      let file = fetchedResultsController.objectAtIndexPath(indexPath) as! ManagedWallPost
       
       configureCell(cell, PFFile: file )
       // This is the new configureCell method
@@ -157,7 +154,7 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
       // Similar to the method above
        let file = fetchedResultsController.objectAtIndexPath(indexPath) as! PFfile
       
-       controller.file = file
+       // controller.file = file
       
       self.navigationController!.pushViewController(controller, animated: true)
   }
@@ -249,6 +246,16 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   // delegate methods
   
   func configureCell(cell: WallPostTableViewCell, PFFile : PFfile) {
+    
+    //if there is an image, shows here
+    
+    //else
+    
+    
+    //wallPost.image.getDataInBackgroundWithBlock
+    
+    wallPost.image.getDataInBackgroundWithBlock
+    
     cell.postImage.image = PFFile.data
     cell.createdByLabel!.text = PFFile.imagefiletoWall.user
     cell.commentLabel!.text = PFFile.imagefiletoWall.comments

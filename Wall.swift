@@ -35,5 +35,5 @@ init(Wall: [String : AnyObject], context: NSManagedObjectContext) {
   
   user = Wall[Keys.User] as! String
   
-}
+  }
 }

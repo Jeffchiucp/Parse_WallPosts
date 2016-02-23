@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var coreDataStack = CoreDataStackManager()
   
+  // MARK: - Shared Image Cache
+  
+    let imageCache = ImageCache()
+  
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     Parse.setApplicationId("jHZOA4z3wxnwdcIjuxqrzLmxrxgkXcaVtdICtras", clientKey: "Akqu8eTpeS3l44BOQvbpAnZzweRiuEvcPSVgzyqY")
 
