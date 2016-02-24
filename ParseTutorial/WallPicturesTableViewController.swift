@@ -13,6 +13,7 @@ class WallPicturesTableViewController: PFQueryTableViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    getWallImages()
   }
   
   //1
@@ -25,6 +26,38 @@ class WallPicturesTableViewController: PFQueryTableViewController {
     let query = WallPost.query()
     return query!
   }
+  
+  
+  func getWallImages() {
+    //1
+    let query = WallPost.query()!
+    query.findObjectsInBackgroundWithBlock { objects, error in
+      if error == nil {
+        //2
+        if let objects = objects as? [WallPost] {
+         // self.loadWallViews(objects)
+          
+          for wallPost: WallPost in objects{
+            let managedWallPost = ManagedWallPost(wallPost: wallPost, context:sharedContext)
+            wallPost.image.getDataInBackgroundWithBlock{ data, error in
+              if let data = data {
+                if let image = UIImage(data: data) {
+                  managedWallPost.wallImage = image
+                }
+              }
+              
+              CoreDataStackManager.sharedInstance().saveContext()
+            }
+          }
+        }
+      } else if let error = error {
+        //3
+        self.showErrorView(error)
+      }
+    }
+  }
+
+  
   
   //3
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {

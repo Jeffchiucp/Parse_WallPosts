@@ -49,6 +49,15 @@ class WallPicturesViewController: UIViewController {
           
           for wallPost: WallPost in objects{
           let managedWallPost = ManagedWallPost(wallPost: wallPost, context:sharedContext)
+            wallPost.image.getDataInBackgroundWithBlock{ data, error in
+              if let data = data {
+                if let image = UIImage(data: data) {
+                  managedWallPost.wallImage = image
+                }
+              }
+              
+              CoreDataStackManager.sharedInstance().saveContext()
+            }
           }
         }
       } else if let error = error {

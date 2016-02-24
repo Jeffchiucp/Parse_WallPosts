@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     Parse.setApplicationId("jHZOA4z3wxnwdcIjuxqrzLmxrxgkXcaVtdICtras", clientKey: "Akqu8eTpeS3l44BOQvbpAnZzweRiuEvcPSVgzyqY")
 
 
-      let navigationController = window!.rootViewController
-        as! UINavigationController
-      let listViewController =
-      navigationController.topViewController
-        as! CoreDataStackManager
+//      let navigationController = window!.rootViewController
+//        as! UINavigationController
+//      let listViewController =
+//      navigationController.topViewController
+//        as! CoreDataStackManager
 //      listViewController.coreDataStack = coreDataStack
       
       return true

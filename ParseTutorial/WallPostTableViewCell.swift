@@ -14,3 +14,11 @@ class WallPostTableViewCell: PFTableViewCell {
   @IBOutlet weak var commentLabel: UILabel!
   @IBOutlet weak var progressView: UIProgressView!
 }
+
+
+class WallPicturesTableViewCell: UITableViewCell {
+  // name
+  //comment
+  //creared by
+  // image
+}

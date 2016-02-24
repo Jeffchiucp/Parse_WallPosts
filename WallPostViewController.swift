@@ -129,16 +129,14 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   //
   override func tableView(tableView: UITableView,
     cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-      let CellIdentifier = "PFfile"
+      let CellIdentifier = "WallPostTableViewCell"
       
       // Here is how to replace the Pffile array using objectAtIndexPath
 
       let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as!
       WallPostTableViewCell
-      
       let managedWallPost = fetchedResultsController.objectAtIndexPath(indexPath) as! ManagedWallPost
-      
-      configureCell(cell, managedWallPost: ManagedWallPost)
+      configureCell(cell, managedWallPost: managedWallPost)
       // This is the new configureCell method
       
       return cell
@@ -222,11 +220,16 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
     
       switch type {
+      
+      case .Insert:
+         tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+      case .Delete:
+         tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         
       case .Update:
         let cell = tableView.cellForRowAtIndexPath(indexPath!) as! WallPostTableViewCell
         let file = controller.objectAtIndexPath(indexPath!) as! PFfile
-        self.configureCell(cell, PFFile:file)
+       // self.configureCell(cell, PFFile:file)
         
       case .Move:
         tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
@@ -245,17 +248,20 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   // Refactoring it into its own method allow the logic to be reused in the fetch results
   // delegate methods
   
-  func configureCell(cell: WallPostTableViewCell, ManagedWallPost: ManagedWallPost) {
+  func configureCell(cell: WallPostTableViewCell, managedWallPost: ManagedWallPost) {
+    
+   
+    
     
     //if there is an image, shows here
-    if let image = PFfile?.data{
-      cell.createdByLabel!.text = PFFile.imagefiletoWall.user
-      cell.commentLabel!.text = PFFile.imagefiletoWall.comments
-      
-    } else {
-      let wallPost = WallPost()
-      wallPost.image.getDataInBackgroundWithBlock
-    }
+//    if let image = PFfile?.data{
+//      cell.createdByLabel!.text = PFFile.imagefiletoWall.user
+//      cell.commentLabel!.text = PFFile.imagefiletoWall.comments
+//      
+//    } else {
+//      let wallPost = WallPost()
+//      wallPost.image.getDataInBackgroundWithBlock
+//    }
     //wallPost.image.getDataInBackgroundWithBlock
     
 //    cell.postImage.image = PFFile.data
