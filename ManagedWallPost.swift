@@ -27,6 +27,8 @@ class ManagedWallPost: NSManagedObject {
   @NSManaged var name: String?
   @NSManaged var user: String?
   @NSManaged var comment: String?
+  @NSManaged var image: NSData?
+
   
 //  let imageCache = (UIApplication.sharedApplication().delegate as! AppDelegate).imageCache
   // 0 unread message below
@@ -47,6 +49,7 @@ class ManagedWallPost: NSManagedObject {
       super.init(entity: entity, insertIntoManagedObjectContext: context)
       name = wallPost.user.username!
       comment = wallPost.comment
+      image = wallPost.image as NSData
       //for image
       
     }

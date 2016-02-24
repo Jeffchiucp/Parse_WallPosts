@@ -136,9 +136,9 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
       let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as!
       WallPostTableViewCell
       
-      let file = fetchedResultsController.objectAtIndexPath(indexPath) as! ManagedWallPost
+      let managedWallPost = fetchedResultsController.objectAtIndexPath(indexPath) as! ManagedWallPost
       
-      configureCell(cell, PFFile: file )
+      configureCell(cell, managedWallPost: ManagedWallPost)
       // This is the new configureCell method
       
       return cell
@@ -245,20 +245,22 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
   // Refactoring it into its own method allow the logic to be reused in the fetch results
   // delegate methods
   
-  func configureCell(cell: WallPostTableViewCell, PFFile : PFfile) {
+  func configureCell(cell: WallPostTableViewCell, ManagedWallPost: ManagedWallPost) {
     
     //if there is an image, shows here
-    
-    //else
-    
-    
+    if let image = PFfile?.data{
+      cell.createdByLabel!.text = PFFile.imagefiletoWall.user
+      cell.commentLabel!.text = PFFile.imagefiletoWall.comments
+      
+    } else {
+      let wallPost = WallPost()
+      wallPost.image.getDataInBackgroundWithBlock
+    }
     //wallPost.image.getDataInBackgroundWithBlock
     
-    wallPost.image.getDataInBackgroundWithBlock
-    
-    cell.postImage.image = PFFile.data
-    cell.createdByLabel!.text = PFFile.imagefiletoWall.user
-    cell.commentLabel!.text = PFFile.imagefiletoWall.comments
+//    cell.postImage.image = PFFile.data
+//    cell.createdByLabel!.text = PFFile.imagefiletoWall.user
+//    cell.commentLabel!.text = PFFile.imagefiletoWall.comments
     
     
 //    @IBOutlet weak var postImage: PFImageView!
