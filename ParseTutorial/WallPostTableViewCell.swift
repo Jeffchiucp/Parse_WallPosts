@@ -20,5 +20,8 @@ class WallPicturesTableViewCell: UITableViewCell {
   // name
   //comment
   //creared by
-  // image
+    // image
+    @IBOutlet weak var comment: UILabel!
+    @IBOutlet weak var createdBy: UILabel!
+    @IBOutlet weak var postImage: PFImageView!
 }
