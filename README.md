@@ -24,10 +24,4 @@ Each view has its own UIViewController in the storyboard, but you’ll notice th
 
 
 Known Issues:
-1. The app would not build successfully because the implementation of Core Data is not complete.  
-I document the issues at the tickets Issue 20. 
-I create a reference to the Core Data. 
-The file that holds the image name. 
-I wrote the image Name and I set the image to the Cache, and store the image, and write it to the Path (imageCache). 
-More work needs to be resolved at WallPostViewController.
-The project needs to be set up to use Core Data persistence. We just need to save and fetch the managed objects.
+The project is set up to use Core Data persistence. We just need to save and fetch the managed objects. Core Data Implementation. There are more work needs to be done at WallPostViewController.
