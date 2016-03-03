@@ -41,8 +41,8 @@
 		7FBA98B01C7402E800240DA8 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA98AF1C7402E800240DA8 /* Wall.swift */; };
 		7FBA98B21C769ABF00240DA8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA98B11C769ABF00240DA8 /* ImageCache.swift */; };
 		7FDEE5531C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FDEE5511C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld */; };
-		7FEBCEEB1C87BB8400E6E3D8 /* ManagedWallPost+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBCEE91C87BB8400E6E3D8 /* ManagedWallPost+CoreDataProperties.swift */; };
-		7FEBCEEC1C87BB8400E6E3D8 /* ManagedWallPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBCEEA1C87BB8400E6E3D8 /* ManagedWallPost.swift */; };
+		9D0CA1E91C873F2000789CAF /* ManagedWallPost+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0CA1E71C873F2000789CAF /* ManagedWallPost+CoreDataProperties.swift */; };
+		9D0CA1EA1C873F2000789CAF /* ManagedWallPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0CA1E81C873F2000789CAF /* ManagedWallPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +97,8 @@
 		7FBA98AF1C7402E800240DA8 /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wall.swift; path = ../Wall.swift; sourceTree = "<group>"; };
 		7FBA98B11C769ABF00240DA8 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		7FDEE5521C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParesCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		7FEBCEE91C87BB8400E6E3D8 /* ManagedWallPost+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ManagedWallPost+CoreDataProperties.swift"; path = "../ManagedWallPost+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7FEBCEEA1C87BB8400E6E3D8 /* ManagedWallPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedWallPost.swift; path = ../ManagedWallPost.swift; sourceTree = "<group>"; };
+		9D0CA1E71C873F2000789CAF /* ManagedWallPost+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ManagedWallPost+CoreDataProperties.swift"; path = "ParseTutorial/ManagedWallPost+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9D0CA1E81C873F2000789CAF /* ManagedWallPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedWallPost.swift; path = ParseTutorial/ManagedWallPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +173,8 @@
 		0E5977171AA9F46F00CB22B6 = {
 			isa = PBXGroup;
 			children = (
+				9D0CA1E71C873F2000789CAF /* ManagedWallPost+CoreDataProperties.swift */,
+				9D0CA1E81C873F2000789CAF /* ManagedWallPost.swift */,
 				0E5977221AA9F46F00CB22B6 /* ParseTutorial */,
 				0E277A751AAA437C001CAED1 /* Frameworks */,
 				0E5977381AA9F46F00CB22B6 /* ParseTutorialTests */,
@@ -193,8 +195,6 @@
 		0E5977221AA9F46F00CB22B6 /* ParseTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				7FEBCEE91C87BB8400E6E3D8 /* ManagedWallPost+CoreDataProperties.swift */,
-				7FEBCEEA1C87BB8400E6E3D8 /* ManagedWallPost.swift */,
 				7FBA989E1C73BD1000240DA8 /* PFfile.swift */,
 				7FBA98A51C73D9A300240DA8 /* WallPostViewController.swift */,
 				7FDEE5511C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld */,
@@ -320,7 +320,6 @@
 				TargetAttributes = {
 					0E59771F1AA9F46F00CB22B6 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 3949BG7KHU;
 					};
 					0E5977341AA9F46F00CB22B6 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -375,10 +374,10 @@
 				0E59774B1AA9F4DC00CB22B6 /* RegisterViewController.swift in Sources */,
 				7FBA98B01C7402E800240DA8 /* Wall.swift in Sources */,
 				7FBA98B21C769ABF00240DA8 /* ImageCache.swift in Sources */,
-				7FEBCEEC1C87BB8400E6E3D8 /* ManagedWallPost.swift in Sources */,
+				9D0CA1EA1C873F2000789CAF /* ManagedWallPost.swift in Sources */,
 				0E5977491AA9F4CF00CB22B6 /* LoginViewController.swift in Sources */,
 				7FDEE5531C6D6D2900D98C09 /* ParesCoreDataModel.xcdatamodeld in Sources */,
-				7FEBCEEB1C87BB8400E6E3D8 /* ManagedWallPost+CoreDataProperties.swift in Sources */,
+				9D0CA1E91C873F2000789CAF /* ManagedWallPost+CoreDataProperties.swift in Sources */,
 				0E234A401AACA6B100FDA76B /* UIViewControllerExtension.swift in Sources */,
 				0ED93C9A1AAC7CA10028B869 /* WallPicturesTableViewController.swift in Sources */,
 				7F6AEDA41C7B9374008F7657 /* ManagedWallPost1.swift in Sources */,

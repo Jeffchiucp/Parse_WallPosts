@@ -45,7 +45,7 @@ class WallPicturesViewController: UIViewController {
       if error == nil {
         //2
         if let objects = objects as? [WallPost] {
-          //self.loadWallViews(objects)
+          self.loadWallViews(objects)
           
           for wallPost: WallPost in objects{
           let managedWallPost = ManagedWallPost(wallPost: wallPost, context:sharedContext)

@@ -1,5 +1,5 @@
 //
-//  ManagedWallPost1.swift
+//  ManagedWallPost.swift
 //  ParseTutorial
 //
 //  Created by Jeff_Chiu on 2/22/16.

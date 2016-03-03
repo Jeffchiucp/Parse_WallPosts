@@ -1,18 +1,18 @@
 //
 //  ManagedWallPost.swift
 //  ParseTutorial
-//
-//  Created by Jeff_Chiu on 2/22/16.
+//  Created by Jeff_Chiu on 3/3/16.
 //  Copyright © 2016 Ron Kliffer. All rights reserved.
 //
 
+
 import Foundation
 import CoreData
-@objc(ManagedWallPost)
 
 
 class ManagedWallPost: NSManagedObject {
   
+  // Insert code here to add functionality to your managed object subclass
   struct Keys {
     static let Name = "name"
     static let User = "user"
@@ -21,11 +21,11 @@ class ManagedWallPost: NSManagedObject {
     //static let Data = "data"
     
   }
-  // Insert code here to add functionality to your managed object subclass
   
   var wallImage:UIImage?
-//init method to insert object into core data
-  override init(entity: NSEntityDescription, insertIntoManagedObjectContext context:NSManagedObjectContext?) {
+  
+  // Init method to insert object in core data
+  override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
     super.init(entity: entity, insertIntoManagedObjectContext: context)
   }
   
@@ -49,6 +49,4 @@ class ManagedWallPost: NSManagedObject {
       }
     }
   }
-  
 }
-

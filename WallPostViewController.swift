@@ -275,53 +275,14 @@ class WallPostViewController : UITableViewController, NSFetchedResultsController
 //    @IBOutlet weak var progressView: UIProgressView!
 //  }
 
+    //
+    //  WallPicturesViewController.swift
+    //  ParseTutorial
+    //
+    //  Created by Ron Kliffer on 3/6/15.
+    //  Copyright (c) 2015 Ron Kliffer. All rights reserved.
+    //
     
-    
-//    cell.nameLabel!.text = PFTableViewCell.name
-//    cell.frameImageView.image = UIImage(named: )
-//    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-    
-//    if let localImage = PFfile {
-//      cell.PFImageView.image = localImage
-//    } else if UIImage.imagePath == nil || PFfile.imagePath == "" {
-//      cell.actorImageView.image = UIImage(named: "personNoImage")
-//    }
-      
-      // If the above cases don't work, then we should download the image
-      
-//    else {
-      
-      // Set the placeholder
- //     cell.actorImageView.image = UIImage(named: "personPlaceholder")
-      
-      
-//      let size = TheMovieDB.sharedInstance().config.profileSizes[1]
-//      let task = TheMovieDB.sharedInstance().taskForImageWithSize(size, filePath: actor.imagePath!) { (imageData, error) -> Void in
-        
-//        if let data = imageData {
-//          dispatch_async(dispatch_get_main_queue()) {
-//            let image = UIImage(data: data)
-//            actor.image = image
-//            cell.actorImageView.image = image
-//          }
-//        }
-//      }
-      
-//      cell.taskToCancelifCellIsReused = task
-//    }
-//  }
-  
-  
-  // MARK: - Saving the array
-  
-//  var actorArrayURL: NSURL {
-//    let filename = "favoriteActorsArray"
-//    let documentsDirectoryURL: NSURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    
-//    return documentsDirectoryURL.URLByAppendingPathComponent(filename)
-//  }
-//}
-
 
 }
 
